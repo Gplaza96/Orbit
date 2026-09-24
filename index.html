@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#f4f1ea" />
+		<link rel="manifest" href="manifest.webmanifest" />
+		<link rel="icon" href="icon.ico" sizes="32x32" type="image/x-icon" />
+		<link rel="icon" href="icon.svg" type="image/svg+xml" />
+		<link rel="canonical" href="https://orbitgp.com/" />
+		<title>Orbit | orbitgp.com</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="app-shell">
+			<aside class="sidebar">
+				<a class="brand" href="#top" aria-label="Orbit home"><img class="brand-icon" src="icon.svg" alt="" /><span>orbit</span></a>
+				<p class="eyebrow">WEEK 02 / LEARNING LAB</p>
+				<nav class="nav-list" aria-label="Main navigation">
+					<button class="nav-item active" data-view="dashboard"><span class="nav-icon">+</span>Dashboard</button>
+					<button class="nav-item" data-view="learning"><span class="nav-icon">/</span>Learning tracks</button>
+					<button class="nav-item" data-view="notes"><span class="nav-icon">~</span>Field notes</button>
+					<button class="nav-item" data-view="help"><span class="nav-icon">?</span>Work lab</button>
+				</nav>
+				<div class="sidebar-footer">
+					<div class="avatar" id="userAvatar">GP</div>
+					<div><strong id="userName">G. Plaza</strong><span id="userRole">Frontend intern</span></div>
+					<button class="icon-button" id="settingsButton" title="Open settings" aria-label="Open settings">⚙</button>
+					<button class="icon-button" id="resetButton" title="Reset demo data" aria-label="Reset demo data">↺</button>
+					<button class="icon-button" id="signOutButton" title="Sign out" aria-label="Sign out">⇥</button>
+				</div>
+			</aside>
+			<main id="top" class="main-content">
+				<header class="topbar">
+					<div><span class="mobile-kicker">CAC / ONBOARDING</span><h1 id="greeting">Your learning orbit<span class="accent">.</span></h1></div>
+					<div class="topbar-actions"><span class="date-label">Friday, September 18</span><button class="secondary-button account-button" id="authButton">Sign in / Create account</button><button class="primary-button" id="newTaskButton"><span>+</span> New learning task</button></div>
+				</header>
+				<section class="hero-grid" id="dashboard">
+					<div class="hero-copy">
+						<p class="section-kicker">Your orbit this week</p>
+						<h2>Small loops.<br /><em>Real momentum.</em></h2>
+						<p class="hero-description">A calm place to turn unfamiliar tools into working knowledge. Keep the next step visible and the big picture close.</p>
+						<div class="progress-row"><div class="progress-track"><span id="progressBar"></span></div><strong id="progressText">0%</strong><span>week complete</span></div>
+					</div>
+					<div class="orbit-visual" aria-label="Weekly completion visualization"><div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><div class="orbit-core"><strong id="completedCount">0</strong><span>of <b id="totalCount">0</b> tasks</span></div><span class="planet planet-one"></span><span class="planet planet-two"></span></div>
+				</section>
+				<section class="stats-grid" aria-label="Learning summary">
+					<article class="stat-card"><span class="stat-label">Focus streak</span><strong>04 <small>days</small></strong><span class="stat-note positive">+2 from last week</span></article>
+					<article class="stat-card coral"><span class="stat-label">Minutes learned</span><strong>215 <small>min</small></strong><span class="stat-note">Target: 300 min</span></article>
+					<article class="stat-card yellow"><span class="stat-label">Open questions</span><strong id="questionCount">03 <small>notes</small></strong><span class="stat-note">One needs a reply</span></article>
+				</section>
+				<section class="offerings-section" aria-labelledby="offeringsTitle">
+					<div class="offerings-intro"><p class="section-kicker">What you can do here</p><div class="offerings-copy"><h2 id="offeringsTitle">A practical place to learn, test, and improve.</h2><p>Explore the public dashboard first. When you are ready, create an account to keep your tasks, notes, and test preparation private.</p></div><div class="offerings-visual"><img src="icon.svg" alt="Orbit learning mark" /><div><strong>Learn in loops</strong><span>Plan · practice · reflect</span></div></div></div>
+					<div class="offerings-grid">
+						<button class="offering-card" type="button" data-offering="plan"><span class="offering-number">01</span><h3>Plan your learning</h3><p>Turn a large subject into small tasks, track what is open, and see your weekly momentum.</p><span class="offering-link">Try a sample task →</span></button>
+						<button class="offering-card offering-card-coral" type="button" data-offering="study"><span class="offering-number">02</span><h3>Build a test study set</h3><p>Add every question and answer you need for an exam, certification, interview, or new skill.</p><span class="offering-link">Open a sample set →</span></button>
+						<button class="offering-card offering-card-yellow" type="button" data-offering="practice"><span class="offering-number">03</span><h3>Practice with feedback</h3><p>Try practice questions, run a mock test, find sources when you are stuck, and review what needs more work.</p><span class="offering-link">Try a sample question →</span></button>
+						<button class="offering-card offering-card-mint" type="button" data-offering="notes"><span class="offering-number">04</span><h3>Keep useful notes</h3><p>Save the explanations and discoveries you want close while your understanding grows.</p><span class="offering-link">Write a sample note →</span></button>
+					</div>
+				</section>
+				<section class="workspace-grid private-page" id="learningPage" hidden>
+					<div class="private-heading"><p class="section-kicker">Private learning space</p><h2>Your tracks and notes</h2><p>Only you can see and shape this space.</p></div>
+					<section class="study-panel" id="studyPanel">
+						<div class="panel-heading"><div><p class="section-kicker">Prepare for a test</p><h3>Test study room</h3></div><span class="check-status" id="studyStatus">Build your study set</span></div>
+						<div id="studyContent"></div>
+					</section>
+					<div class="tasks-panel" id="tracks">
+						<div class="panel-heading"><div><p class="section-kicker">The next orbit</p><h3>Learning tasks</h3></div><div class="filter-tabs" role="tablist"><button class="filter-tab active" data-filter="all">All</button><button class="filter-tab" data-filter="open">Open</button><button class="filter-tab" data-filter="done">Done</button></div></div>
+						<div class="task-list" id="taskList"></div>
+						<button class="add-task-row" id="addTaskRow"><span class="add-circle">+</span>Write your own learning task</button>
+						<details class="learning-library">
+							<summary><span>Browse W3Schools tutorials</span><span class="library-count">18 resources</span></summary>
+							<div class="resource-grid">
+								<a href="https://www.w3schools.com/html/" target="_blank" rel="noopener">HTML</a>
+								<a href="https://www.w3schools.com/css/" target="_blank" rel="noopener">CSS</a>
+								<a href="https://www.w3schools.com/js/" target="_blank" rel="noopener">JavaScript</a>
+								<a href="https://www.w3schools.com/typescript/" target="_blank" rel="noopener">TypeScript</a>
+								<a href="https://www.w3schools.com/python/" target="_blank" rel="noopener">Python</a>
+								<a href="https://www.w3schools.com/java/" target="_blank" rel="noopener">Java</a>
+								<a href="https://www.w3schools.com/c/" target="_blank" rel="noopener">C</a>
+								<a href="https://www.w3schools.com/cpp/" target="_blank" rel="noopener">C++</a>
+								<a href="https://www.w3schools.com/cs/" target="_blank" rel="noopener">C#</a>
+								<a href="https://www.w3schools.com/go/" target="_blank" rel="noopener">Go</a>
+								<a href="https://www.w3schools.com/rust/" target="_blank" rel="noopener">Rust</a>
+								<a href="https://www.w3schools.com/kotlin/" target="_blank" rel="noopener">Kotlin</a>
+								<a href="https://www.w3schools.com/swift/" target="_blank" rel="noopener">Swift</a>
+								<a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener">SQL</a>
+								<a href="https://www.w3schools.com/php/" target="_blank" rel="noopener">PHP</a>
+								<a href="https://www.w3schools.com/react/" target="_blank" rel="noopener">React</a>
+								<a href="https://www.w3schools.com/nodejs/" target="_blank" rel="noopener">Node.js</a>
+								<a href="https://www.w3schools.com/bootstrap/" target="_blank" rel="noopener">Bootstrap</a>
+							</div>
+						</details>
+					</div>
+					<section class="knowledge-check" id="knowledgeCheck"><div class="panel-heading"><div><p class="section-kicker">Practice what you learned</p><h3>Knowledge check</h3></div><span class="check-status" id="quizStatus">Choose a lesson</span></div><form class="topic-search" id="topicSearch"><label for="topicInput">Looking for something else?</label><div><input id="topicInput" placeholder="e.g. astronomy, economics, SQL" required /><button class="secondary-button" type="submit">Find sources</button></div><small>We will open a focused search so you can choose a trusted lesson.</small></form><div class="lesson-picker" id="lessonPicker"></div><div class="quiz-card" id="quizCard"><p class="quiz-placeholder">Choose a lesson above to test your knowledge.</p></div></section>
+				</section>
+				<section class="notes-page private-page" id="notesPage" hidden><div class="private-heading"><p class="section-kicker">Your private archive</p><h2>Field notes</h2><p>Keep the useful bits close. These notes belong only to you.</p></div><div class="notes-panel notes-page-panel"><form class="note-composer" id="noteForm"><label class="sr-only" for="noteInput">Write a field note</label><textarea id="noteInput" name="note" rows="4" maxlength="180" placeholder="What clicked today?"></textarea><div class="note-composer-footer"><span>Keep the useful bits.</span><button class="text-button" type="submit">Save note</button></div></form><div class="note-list" id="noteList"></div></div></section>
+				<section class="help-page private-page" id="helpPage" hidden><div class="private-heading"><p class="section-kicker">Active work only</p><h2>Work lab</h2><p>Bring the issue, code snippet, and screenshot from the work you are doing. Keep human and AI answers together.</p></div><div class="help-layout"><form class="case-composer" id="caseForm"><div class="case-form-heading"><div><p class="section-kicker">New work issue</p><h3>What are you solving?</h3></div><span class="case-badge">Private</span></div><label for="caseQuestion">Work question or issue</label><textarea id="caseQuestion" name="question" rows="3" maxlength="500" placeholder="e.g. Why does this click handler fire twice?" required></textarea><label for="caseCode">Working code snippet <span>optional</span></label><textarea id="caseCode" name="code" rows="8" maxlength="6000" class="code-input" placeholder="Paste the smallest useful example here..."></textarea><div class="case-form-row"><div><label for="caseLanguage">Language or framework</label><select id="caseLanguage" name="language" required><option value="JavaScript">JavaScript</option><option>TypeScript</option><option>HTML</option><option>CSS</option><option>React</option><option>Vue</option><option>Angular</option><option>Python</option><option>Java</option><option>C#</option><option>C++</option><option>C</option><option>Go</option><option>Rust</option><option>PHP</option><option>Ruby</option><option>Kotlin</option><option>Swift</option><option>SQL</option><option>Bash</option><option>PowerShell</option><option>JSON</option><option>Other</option></select><input id="customLanguage" name="customLanguage" placeholder="Or write another language" maxlength="40" /></div><div><label for="caseScreenshot">Work screenshot <span>optional</span></label><input id="caseScreenshot" name="screenshot" type="file" accept="image/png,image/jpeg,image/webp" /></div></div><div id="screenshotPreview" class="screenshot-preview" hidden></div><button class="primary-button" type="submit">Add work issue</button></form><div class="case-list-panel"><div class="panel-heading"><div><p class="section-kicker">Your work queue</p><h3>Issues in motion</h3></div><span class="check-status" id="caseCount">0 issues</span></div><div id="caseList" class="case-list"></div></div></div></section>
+			</main>
+		</div>
+		<dialog id="taskDialog"><form method="dialog" id="taskForm"><div class="dialog-header"><div><p class="section-kicker">Add to your orbit</p><h3>New learning task</h3></div><button class="close-button" value="cancel" aria-label="Close dialog">×</button></div><label for="taskTitle">What will you learn?</label><input id="taskTitle" name="title" placeholder="Type any topic you want to learn" required maxlength="72" /><p class="form-hint">You can write your own topic, even if it is not in the W3Schools library.</p><label for="taskTag">Track</label><select id="taskTag" name="tag"><option>Architecture</option><option>Frontend</option><option>Backend</option><option>Workflow</option></select><div class="dialog-actions"><button class="secondary-button" value="cancel">Cancel</button><button class="primary-button" value="default">Add task</button></div></form></dialog>
+		<dialog id="offeringDialog" class="offering-dialog" aria-labelledby="offeringDialogTitle"><div class="dialog-header"><div><p class="section-kicker">Public sample</p><h3 id="offeringDialogTitle">Try Orbit</h3></div><button class="close-button" id="offeringCloseButton" type="button" aria-label="Close sample window">×</button></div><div id="offeringDialogContent"></div></dialog>
+		<dialog id="settingsDialog"><form method="dialog" id="settingsForm"><div class="dialog-header"><div><p class="section-kicker">Personalize Orbit</p><h3>Settings</h3></div><button class="close-button" value="cancel" aria-label="Close settings">×</button></div><fieldset><legend>Appearance</legend><label class="theme-option"><input type="radio" name="theme" value="light" /> <span><strong>Light mode</strong><small>Warm paper and mint</small></span></label><label class="theme-option"><input type="radio" name="theme" value="dark" /> <span><strong>Dark mode</strong><small>Low-glare ink and mint</small></span></label><label class="custom-colors"><input id="customColors" name="customColors" type="checkbox" /> Use my custom colors</label><div class="color-grid"><label>Background<input id="colorPaper" name="colorPaper" type="color" /></label><label>Panels<input id="colorSurface" name="colorSurface" type="color" /></label><label>Text<input id="colorInk" name="colorInk" type="color" /></label><label>Accent<input id="colorMint" name="colorMint" type="color" /></label></div><label for="noteSize">Note text size</label><select id="noteSize" name="noteSize"><option value="14px">Small</option><option value="16px">Medium</option><option value="19px">Large</option><option value="22px">Extra large</option></select></fieldset><fieldset><legend>Profile</legend><div class="name-fields"><div><label for="profileFirstName">First name</label><input id="profileFirstName" name="firstName" required /></div><div><label for="profileLastName">Last name</label><input id="profileLastName" name="lastName" required /></div></div><label for="profileEmail">Confirm your email to change password</label><input id="profileEmail" name="profileEmail" type="email" placeholder="Your account email" /><label for="newPassword">New password</label><input id="newPassword" name="newPassword" type="password" minlength="6" placeholder="Leave blank to keep current password" /></fieldset><p id="settingsError" class="settings-error" role="alert"></p><div class="dialog-actions"><button class="secondary-button" value="cancel">Cancel</button><button class="primary-button" value="default">Save settings</button></div></form></dialog>
+		<dialog id="authDialog" class="auth-dialog" aria-labelledby="authTitle"><button class="auth-close-button" id="authCloseButton" type="button" aria-label="Close sign in dialog">×</button><div class="auth-header"><div class="auth-brand"><img class="brand-icon" src="icon.svg" alt="" /><strong>orbit</strong></div><p class="section-kicker">CAC / LEARNING LAB</p><h2 id="authTitle">Your orbit, your progress.</h2><p>Turn unfamiliar tools into working knowledge, one small loop at a time.</p><ul class="auth-features"><li>Plan learning tasks</li><li>Save field notes</li><li>See your momentum</li></ul></div><div class="auth-tabs"><button type="button" class="auth-mode-button active" data-mode="signin">Sign in</button><button type="button" class="auth-mode-button" data-mode="signup">Create account</button></div><p id="authError" class="auth-error" role="alert"></p><form id="signinForm"><label for="signinEmail">Email</label><input id="signinEmail" name="email" type="email" autocomplete="email" required /><label for="signinPassword">Password</label><input id="signinPassword" name="password" type="password" autocomplete="current-password" minlength="6" required /><button class="primary-button auth-submit" type="submit">Sign in</button></form><form id="signupForm" hidden><div class="name-fields"><div><label for="signupFirstName">First name</label><input id="signupFirstName" name="firstName" autocomplete="given-name" required /></div><div><label for="signupLastName">Last name</label><input id="signupLastName" name="lastName" autocomplete="family-name" required /></div></div><label for="signupEmail">Email</label><input id="signupEmail" name="email" type="email" autocomplete="email" required /><label for="signupPassword">Password</label><input id="signupPassword" name="password" type="password" autocomplete="new-password" minlength="6" required /><button class="primary-button auth-submit" type="submit">Create account</button></form><button class="auth-continue-button" id="authContinueButton" type="button">Continue exploring without an account</button></dialog>
+		<div class="toast" id="toast" role="status" aria-live="polite"></div>
+		<script src="app.js"></script>
+	</body>
+</html>

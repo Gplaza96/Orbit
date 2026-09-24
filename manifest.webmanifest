@@ -1,0 +1,23 @@
+{
+  "name": "Orbit Learning Lab",
+  "short_name": "Orbit",
+  "description": "A private internship learning tracker for tasks, notes, and momentum.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f1ea",
+  "theme_color": "#17221e",
+  "icons": [
+    {
+      "src": "icon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
