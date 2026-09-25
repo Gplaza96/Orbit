@@ -442,7 +442,8 @@ The manifest includes `icon.ico`, and `Orbit.url` contains:
 IconFile=C:\Users\gplaza\Desktop\app\icon.ico
 ```
 
-The service-worker cache was changed from `orbit-v1` to `orbit-v2` and now includes both icon files. Changing the cache name makes the browser create a new cache with the new assets.
+The service-worker cache was changed from `orbit-v1` to `orbit-v2` and now includes both icon files. 
+Changing the cache name makes the browser create a new cache with the new assets.
 
 ## 17. Service worker
 
